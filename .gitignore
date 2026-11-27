@@ -64,6 +64,7 @@ dmypy.json
 !.env.example
 *.pem
 *.key
+*.crt
 
 # ---------------------------------------------------------------------------
 # Networking project artifacts
