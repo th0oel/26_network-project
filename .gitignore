@@ -120,3 +120,6 @@ $RECYCLE.BIN/
 .agents/skills/
 .claude/skills/
 .claude/settings.local.json
+
+# 보고서(개인정보: 이름·학번) — GitHub에 올리지 않음
+*.docx
