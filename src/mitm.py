@@ -18,6 +18,7 @@ mitm.py  —  3단계 MITM(중간자) 공격 시뮬레이터  [GNS3 격리망 �
 """
 
 import argparse
+import os
 import sys
 import time
 
@@ -31,6 +32,10 @@ def require_lab_confirmation():
     print(" [경고] MITM 공격 시뮬레이터 — GNS3 격리망 전용")
     print(" 공용/실제 네트워크에서 실행하면 불법입니다.")
     print("=" * 60)
+    # 격리 실습망에서의 자동 실행용: 환경변수로 확인을 대체(대화형 입력이 없을 때)
+    if os.environ.get("LAB_CONFIRM") == "1":
+        print(" [자동확인] LAB_CONFIRM=1 (격리 실습망 전용으로 실행)")
+        return
     answer = input(" 격리된 실습망입니까? 실행하려면 'LAB' 입력: ").strip()
     if answer != "LAB":
         print("[중단] 확인되지 않아 실행을 취소합니다.")
